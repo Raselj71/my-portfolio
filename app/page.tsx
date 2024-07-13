@@ -1,113 +1,60 @@
 import Image from "next/image";
+import { FiDownload } from "react-icons/fi";
+import { GrGithub } from "react-icons/gr";
+import { FaLinkedin } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa";
+import Link from "next/link";
+import Profile from "@/public/profile.png"
+import { FaLinkedinIn } from "react-icons/fa6";
+
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+  <main className="bg-[#111827] min-h-lvh">
+    <div className="flex flex-col md:flex-row md:items-center md:flex-row-reverse md:justify-around md:w-full md:py-10 md:px-6 lg:justify-center lg:py-20 lg:gap-32">
+        <div className="relative size-80 lg:size-96  mt-10 lg:mt-0 mx-auto md:mx-0 ">
+            <Image className="object-cover w-full h-full rounded-full" src={Profile} alt="rasel ahmed" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0c101a] via-transparent to-transparent rounded-full border-4 border-[#EAB308]"></div>
         </div>
-      </div>
+        <div className="md:text-start">
+            <h2 className="text-white mt-3 md:text-start text-center text-2xl lg:text-3xl">Software Developer</h2>
+            <h2 className="text-white text-center md:text-start text-5xl  font-bold mt-2 md:mt-6 md:mb-6 lg:text-6xl">
+                Hello I'm <br /> <span className="text-[#EAB308]">Rasel Ahmed</span>
+            </h2>
+            <p className="text-lg text-center md:text-start md:text-sm md:mb-6 lg:text-2xl mt-10 md:w-80 lg:w-[500px] px-4 md:px-0">
+               A passionate software developer skilled in Node.js, JavaScript, React, Next.js, and Android development. I love turning complex problems into simple, elegant solutions through innovative web and mobile applications.
+            </p>
+            <div className=" md:flex md:items-center md:gap-6 lg:gap-20">
+                <a href="/resume.pdf" className=" lg:text-lg lg:font-semibold mx-20 md:text-start md:mx-0 mt-2 mb-3 px-4 py-2 rounded-lg flex items-center justify-center gap-4 border-2 border-[#EAB308] text-[#EAB308] hover:text-white hover:bg-[#EAB308]">
+                    download resume <FiDownload />
+                </a>
+                <div className="flex justify-center gap-5 mb-10 md:mb-0 ">
+                    <Link
+                        className="text-2xl lg:text-3xl rounded-full border-2 p-1 lg:p-2 border-[#EAB308] text-[#EAB308] hover:text-white hover:bg-[#EAB308]"
+                        href={"https://www.linkedin.com/in/rasel221/"}
+                        target="_blank"
+                    >
+                        <GrGithub />
+                    </Link>
+                    <Link
+                        className="text-2xl lg:text-3xl rounded-full border-2 p-1 lg:p-2 border-[#EAB308] text-[#EAB308] hover:text-white hover:bg-[#EAB308]"
+                        href={"https://github.com/Raselj71"}
+                        target="_blank"
+                    >
+                        <FaLinkedinIn />
+                    </Link>
+                    <Link
+                        className="text-2xl rounded-full lg:text-3xl border-2 p-1 lg:p-2 border-[#EAB308] text-[#EAB308] hover:text-white hover:bg-[#EAB308]"
+                        href={"https://youtube.com/techtutorpro"}
+                        target="_blank"
+                    >
+                        <FaYoutube />
+                    </Link>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
   );
 }
