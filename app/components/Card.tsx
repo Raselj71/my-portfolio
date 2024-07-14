@@ -5,14 +5,15 @@ import Image from "next/image";
 import { GrGithub } from "react-icons/gr";
 import { IoOpenOutline } from "react-icons/io5";
 import Link from "next/link";
+import { Url } from "url";
 
 
 type cardtype = {
   icon: StaticImageData;
   title: String;
   des:String[];
-  github:String;
-  live:String;
+  github:any;
+  live:any;
 };
 
 function Card({icon,title,des,github,live}:cardtype) {

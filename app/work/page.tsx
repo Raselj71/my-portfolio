@@ -74,15 +74,12 @@ function page() {
         <Card
           title={"Rest API node js & MySql"}
           github={
-            "https://github.com/Raselj71/Rest-API-using-Express-and-MySql-Database"
+            
+              "https://github.com/Raselj71/Rest-API-using-Express-and-MySql-Database"
+            
           }
           live={""}
-          des={[
-            "node js",
-            "JavaScript",
-            "MySql",
-            "CRUD operation"
-          ]}
+          des={["node js", "JavaScript", "MySql", "CRUD operation"]}
           icon={restApi}
         />
         <Card
