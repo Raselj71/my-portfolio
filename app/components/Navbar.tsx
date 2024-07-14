@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { CgMenuRightAlt } from "react-icons/cg";
 import { RxCross2 } from "react-icons/rx";
 
-function navbar() {
+function Navbar() {
     const[open, setOpen]=useState(false);
       const pathname = usePathname();
   return (
@@ -117,4 +117,4 @@ function navbar() {
   );
 }
 
-export default navbar
+export default Navbar

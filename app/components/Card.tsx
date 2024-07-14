@@ -29,9 +29,9 @@ function Card({icon,title,des,github,live}:cardtype) {
        {title}
       </p>
       <div className="flex flex-wrap justify-center items-center gap-2 px-4">
-        {des.map((tech) => (
+        {des.map((tech,i) => (
           <span
-           
+            key={i}
             className="rounded-full px-3 py-1 text-white bg-yellow-500 hover:bg-orange-500"
           >
             {tech}
