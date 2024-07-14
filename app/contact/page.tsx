@@ -12,7 +12,7 @@ function page() {
     <section className='lg:flex lg:justify-center lg:gap-8 lg:mt-20'>
 
                        <div className='bg-[#111827] px-4 py-5 mx-4 md:mx-16 my-4 rounded-lg'>
-                            <form action="">
+                            <form >
                                  <h2 className='text-white text-xl font-semibold text-center mb-10'>Lets work together</h2>
                                  
                                      <div className='flex flex-col gap-2 my-1'>

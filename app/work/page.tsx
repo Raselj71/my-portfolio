@@ -7,10 +7,11 @@ import emi from "@/public/Loan & EMI Calculators.png";
 import ecommerce from "@/public/Ecommerce Project.png";
 import jobbord from '@/public/jobbord.png'
 import portfolio from '@/public/portfolio.png'
+import restApi from '@/public/restapi.png'
 
 function page() {
   return (
-    <section className="flex flex-col bg-[#111827]">
+    <section className="flex flex-col bg-[#111827] pb-10">
       <div className="mt-10 mx-6 md:mx-14 lg:mx-64">
         <h2 className="border-l-4 inline-block px-2 border-[#EAB308] text-3xl text-white font-semibold ">
           My works
@@ -23,13 +24,13 @@ function page() {
       <div className="mt-10 mx-6 md:mx-14 lg:mx-64 flex flex-col justify-center items-center gap-y-16 lg:grid lg:grid-cols-3 gap-4">
         <Card
           title={"Realtime Chat Application"}
-          github={""}
+          github={"https://github.com/Raselj71/Chat-app-Client.git"}
           live={""}
           des={[
             "HTML",
             "CSS",
             "JavaScript",
-            "React JS",
+            "Typescript",
             "Next JS",
             "JWT",
             "MongoDB",
@@ -39,8 +40,8 @@ function page() {
         />
 
         <Card
-          title={"Job bord"}
-          github={""}
+          title={"Job bord-job listing"}
+          github={"https://github.com/Raselj71/Job-board"}
           live={""}
           des={[
             "HTML",
@@ -50,11 +51,40 @@ function page() {
             "MySql",
             "Authentication",
             "bootstrap",
-            "Socket",
           ]}
           icon={jobbord}
         />
 
+        <Card
+          title={"My Portfolio Website"}
+          github={"https://github.com/Raselj71/my-portfolio"}
+          live={""}
+          des={[
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "React JS",
+            "Next JS",
+            "JWT",
+            "Typescript",
+          ]}
+          icon={portfolio}
+        />
+
+        <Card
+          title={"Rest API node js & MySql"}
+          github={
+            "https://github.com/Raselj71/Rest-API-using-Express-and-MySql-Database"
+          }
+          live={""}
+          des={[
+            "node js",
+            "JavaScript",
+            "MySql",
+            "CRUD operation"
+          ]}
+          icon={restApi}
+        />
         <Card
           title={"PDF master Reader"}
           github={"https://github.com/Raselj71/Pdf_Reader.git"}
@@ -88,33 +118,8 @@ function page() {
           title={"Ecommerce project using java-Swing"}
           github={"https://github.com/Raselj71/Ecommerce-Project.git"}
           live={""}
-          des={[
-            "HTML",
-            "CSS",
-            "JavaScript",
-            "React JS",
-            "Next JS",
-            "JWT",
-            "MongoDB",
-            "Socket",
-          ]}
+          des={["java", "Java Swing", "MySql", "Authentication", "OOP"]}
           icon={ecommerce}
-        />
-
-        <Card
-          title={"My Portfolio Website"}
-          github={""}
-          live={""}
-          des={[
-            "HTML",
-            "CSS",
-            "JavaScript",
-            "React JS",
-            "Next JS",
-            "JWT",
-            "MongoDB",
-          ]}
-          icon={portfolio}
         />
       </div>
     </section>

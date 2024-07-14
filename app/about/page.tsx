@@ -109,7 +109,7 @@ function page() {
 
       <div className="mt-10 mx-6 md:mx-14 lg:mx-64">
         <h2 className="border-l-4 inline-block px-2 border-[#EAB308] text-3xl text-white font-semibold ">
-          Educationan
+          Education
         </h2>
         <p className="mt-4 text-lg">
           Currently enrolling Bachelor of Computer Science and Engineering at
