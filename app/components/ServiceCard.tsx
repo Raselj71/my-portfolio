@@ -4,7 +4,7 @@ import { IconType } from 'react-icons';
 type cardType={
     title:String;
     description:String;
-    icon:IconType
+    icon:any;
 }
 
 function ServiceCard({ title, description, icon }:cardType) {
