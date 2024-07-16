@@ -36,7 +36,7 @@ function page() {
             "MongoDB",
             "Socket",
           ]}
-          icon={Chatapp}
+          icon={"/chatting app project.png"}
         />
 
         <Card
@@ -52,7 +52,7 @@ function page() {
             "Authentication",
             "bootstrap",
           ]}
-          icon={jobbord}
+          icon={"/jobbord.png"}
         />
 
         <Card
@@ -68,19 +68,17 @@ function page() {
             "JWT",
             "Typescript",
           ]}
-          icon={portfolio}
+          icon={"/portfolio.png"}
         />
 
         <Card
           title={"Rest API node js & MySql"}
           github={
-            
-              "https://github.com/Raselj71/Rest-API-using-Express-and-MySql-Database"
-            
+            "https://github.com/Raselj71/Rest-API-using-Express-and-MySql-Database"
           }
           live={""}
           des={["node js", "JavaScript", "MySql", "CRUD operation"]}
-          icon={restApi}
+          icon={"/restapi.png"}
         />
         <Card
           title={"PDF master Reader"}
@@ -96,7 +94,7 @@ function page() {
             "bookmark",
             "recent",
           ]}
-          icon={pdf}
+          icon={"/ALL PDFS.jpg"}
         />
         <Card
           title={"Emi and loan calculators"}
@@ -109,14 +107,14 @@ function page() {
             "SqLite db",
             "Graph and chart",
           ]}
-          icon={emi}
+          icon={"/Loan & EMI Calculators.png"}
         />
         <Card
           title={"Ecommerce project using java-Swing"}
           github={"https://github.com/Raselj71/Ecommerce-Project.git"}
           live={""}
           des={["java", "Java Swing", "MySql", "Authentication", "OOP"]}
-          icon={ecommerce}
+          icon={"/Ecommerce Project.png"}
         />
       </div>
     </section>

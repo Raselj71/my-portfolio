@@ -27,7 +27,7 @@ function page() {
           About
         </h2>
         <p className="mt-4 text-xl ">
-          Hi there! I'm Rasel Ahmed, a passionate and dedicated software
+          Hi there! I'm Rasel Ahammed, a passionate and dedicated software
           developer with expertise in a wide range of programming languages and
           technologies.<br></br> <br></br> Over the years, I've honed my skills
           in Node.js, JavaScript, HTML, CSS, React, Next.js, and Android
@@ -82,7 +82,7 @@ function page() {
           Experience with
         </h2>
         <div className="mt-4 relative grid grid-cols-2 gap-y-3 md:grid-cols-3 lg:grid-cols-4 -lg:gap-x-8">
-          <Iconelement logo={cIcon} text={"C programming"} />
+          {/* <Iconelement logo={cIcon} text={"C programming"} />
           <Iconelement logo={cplusIcon} text={"C++"} />
           <Iconelement logo={javascriptIcon} text={"Javascript"} />
           <Iconelement logo={phpIcon} text={"PHP"} />
@@ -103,7 +103,36 @@ function page() {
           <Iconelement logo={gitIcon} text={"Git & Github"} />
           <Iconelement logo={awsIcon} text={"AWS"} />
           <Iconelement logo={nginxIcon} text={"NGINX Server"} />
-          <Iconelement logo={dockerIcon} text={"docker"} />
+          <Iconelement logo={dockerIcon} text={"docker"} /> */}
+
+          <Iconelement logo={"/c++.png"} text={"C programming"} />
+          <Iconelement logo={"c++.png"} text={"C++"} />
+          <Iconelement
+            logo={"/icons8-javascript-240.png"}
+            text={"Javascript"}
+          />
+          <Iconelement logo={"/php.png"} text={"PHP"} />
+
+          <Iconelement logo={"/java.png"} text={"Java"} />
+          <Iconelement logo={"/dsa.png"} text={"DSA & algorithms"} />
+          <Iconelement logo={"/icons8-html-logo-480.png"} text={"HTML"} />
+          <Iconelement logo={"/icons8-css-480.png"} text={"CSS"} />
+          <Iconelement
+            logo={"/icons8-tailwind-css-480.png"}
+            text={"Tailwind CSS"}
+          />
+
+          <Iconelement logo={"/pngwing.com.png"} text={"React js"} />
+          <Iconelement logo={"/icons8-nodejs-480.png"} text={"Node js"} />
+
+          <Iconelement logo={"/icons8-android-480.png"} text={"Android"} />
+          <Iconelement logo={"/icons8-mysql-240.png"} text={"MySql"} />
+          <Iconelement logo={"/mongodb.png"} text={"Mongodb"} />
+
+          <Iconelement logo={"/git.png"} text={"Git & Github"} />
+          <Iconelement logo={"/aws.png"} text={"AWS"} />
+          <Iconelement logo={"/nginx.png"} text={"NGINX Server"} />
+          <Iconelement logo={"/docker.png"} text={"docker"} />
         </div>
       </div>
 
