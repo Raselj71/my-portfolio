@@ -29,7 +29,7 @@ function page() {
           github={
             "https://github.com/Raselj71/Foodi-React-website.git"
           }
-          live={"https://foodi.codewithrasel.com"}
+          live={"https://foodi-react-website-my759jqs3-raselj71s-projects.vercel.app"}
           des={[
             "HTML",
             "CSS",
