@@ -1,12 +1,9 @@
 import Image from "next/image";
 import { FiDownload } from "react-icons/fi";
 import { GrGithub } from "react-icons/gr";
-import { FaLinkedin } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import Link from "next/link";
-import Profile from "@/public/profile.png";
 import { FaLinkedinIn } from "react-icons/fa6";
-import { profile } from "console";
 
 export default function Home() {
   return (
@@ -23,13 +20,13 @@ export default function Home() {
         </div>
         <div className="md:text-start">
           <h2 className="text-white mt-3 md:text-start text-center text-2xl lg:text-3xl">
-            Software Developer
+            Software Engineer
           </h2>
           <h2 className="text-white text-center md:text-start text-5xl  font-bold mt-2 md:mt-6 md:mb-6 lg:text-6xl">
             Hello I'm<br />{" "}
             <span className="text-[#EAB308] px-4">Rasel Ahammed</span>
           </h2>
-           <h3 className="text-center mt-4 font-sans md:text-start">(Full stack developer intern at CodeAlpha)</h3>
+           <h3 className="text-center mt-4- lg:text-xl font-sans md:text-start">Junior Software Engineer at Dhrubok info tech service Ltd</h3>
           <p className="text-lg text-center md:text-start md:text-sm md:mb-6 lg:text-2xl mt-10 md:w-80 lg:w-[500px] px-4 md:px-0">
             A passionate software developer skilled in Node.js, JavaScript,
             React, Next.js, and Android development. I love turning complex

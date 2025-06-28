@@ -22,7 +22,7 @@ function page() {
         </p>
       </div>
 
-      <div className="mt-10 mx-6 md:mx-14 lg:mx-64 flex flex-col justify-center items-center gap-y-16 lg:grid lg:grid-cols-3 gap-4">
+      <div className="mt-10 mx-6 md:mx-14 lg:mx-64 flex flex-col justify-center items-center gap-y-16 lg:grid lg:grid-cols-2 gap-4">
 
       <Card
           title={"Foodi - Resturant Landing page design"}
