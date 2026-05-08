@@ -4,6 +4,7 @@ import { Eyebrow } from '@/components/ui/Eyebrow';
 import { Link } from '@/components/ui/Link';
 import { site } from '@/lib/site';
 import { GlowBackdrop } from './GlowBackdrop';
+import { HeroHeadline } from './HeroHeadline';
 
 export function Hero() {
   return (
@@ -12,9 +13,7 @@ export function Hero() {
       <Container className="relative flex flex-col gap-12 py-20 md:flex-row md:items-center md:gap-20 md:py-32">
         <div className="order-2 md:order-1 md:flex-1">
           <Eyebrow>Software Engineer · Dhaka</Eyebrow>
-          <h1 className="mt-4 text-balance text-4xl font-semibold tracking-tighter text-text md:text-6xl lg:text-7xl">
-            Building modern web and mobile products.
-          </h1>
+          <HeroHeadline>Building modern web and mobile products.</HeroHeadline>
           <p className="mt-6 max-w-prose text-pretty text-lg text-text-muted">
             I&apos;m {site.author}. Currently a software engineer at Dhrubok
             Infotech Services, working with Next.js, React Native, Node, and

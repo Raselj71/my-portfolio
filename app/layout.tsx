@@ -3,6 +3,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { fontSans, fontMono } from '@/lib/fonts';
 import { Nav } from '@/components/layout/Nav';
 import { Footer } from '@/components/layout/Footer';
+import { PageTransition } from '@/components/motion/PageTransition';
 import { defaultMetadata } from '@/lib/metadata';
 import './globals.css';
 
@@ -21,7 +22,9 @@ export default function RootLayout({
     >
       <body className="min-h-screen bg-bg text-text antialiased">
         <Nav />
-        <main className="min-h-[calc(100vh-4rem)]">{children}</main>
+        <main className="min-h-[calc(100vh-4rem)]">
+          <PageTransition>{children}</PageTransition>
+        </main>
         <Footer />
         <Analytics />
       </body>
