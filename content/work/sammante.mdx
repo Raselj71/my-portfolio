@@ -1,0 +1,44 @@
+---
+slug: sammante
+title: Sammanté — Health Insurance SaaS Platform
+summary: Multi-tenant SaaS automating onboarding, claims processing, and billing for insurance companies, HR firms, and healthcare partners.
+role: Software Engineer @ Dhrubok Infotech Services Ltd
+period: Apr 2025 – Jul 2025
+stack: [Next.js, TypeScript, AI/OCR, Multi-tenant, WhatsApp API, Email Automation]
+cover: /work/sammante/cover.png
+links:
+  live: https://portal.sammante.sn/auth/sign-in
+  github: null
+featured: true
+order: 1
+status: shipped
+---
+
+## Problem
+
+Insurance companies, HR firms, and healthcare partners ran their entire customer lifecycle — onboarding, beneficiary management, policy assignment, claims processing, billing reminders — across spreadsheets, email threads, and disconnected tools. Claims took days to validate; payment reminders were manual; white-label customization for new tenants required code changes.
+
+## Role
+
+I shipped end-to-end functionality across the platform: tenant onboarding and white-label customization, the beneficiary-and-policy data model, AI-assisted claims validation, automated billing, and the WhatsApp/email communication layer.
+
+## Technical decisions
+
+<Stack items={["Next.js", "TypeScript", "Multi-tenant data model", "AI/OCR for ID document extraction", "WhatsApp Business API", "Email automation"]} />
+
+- **Multi-tenant architecture.** Each insurance company is a tenant with its own branding (logo, color, font), role configuration, and dashboards. New tenants self-onboard through a wizard with automated welcome and tutorial flows.
+- **AI-powered document extraction.** Beneficiary onboarding accepts uploads of ID cards, certificates, and passports; OCR + a structured extraction pass auto-fills the profile, removing the manual transcription step.
+- **Claims automation.** Image-based claim documents pass through validation that detects duplicates and flags anomalies. Eligible cases route to an auto-payment workflow; the rest land in a manual review queue with summaries.
+- **Billing and reminders.** A real-time dashboard tracks premiums, overdue payments, and renewal alerts. Invoices generate automatically; WhatsApp and email reminders are personalized per tenant.
+- **Communication layer.** WhatsApp + email automation handles claim updates, service notifications, and escalation alerts for complex disputes.
+
+## Outcome
+
+<Outcome metric="End-to-end" detail="Customer lifecycle covered from onboarding through claims and billing without spreadsheets in the loop." />
+<Outcome metric="Self-serve" detail="New tenants onboard and customize branding without engineering involvement." />
+<Outcome metric="Automated" detail="Claims validation and payment reminders run without manual triage on the eligible-case path." />
+
+<Aside>
+  Sammanté is a production SaaS — code is private and screenshots will land
+  here as the team approves what is publishable.
+</Aside>

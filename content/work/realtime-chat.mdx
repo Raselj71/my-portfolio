@@ -1,0 +1,35 @@
+---
+slug: realtime-chat
+title: Realtime Chat
+summary: Multi-room chat with WebSocket-backed delivery, JWT auth, and persistent message history in MongoDB.
+role: Solo developer
+period: "2024"
+stack: [Next.js, Socket, JWT, MongoDB, TypeScript]
+cover: /work/realtime-chat/cover.png
+links:
+  live: null
+  github: https://github.com/Raselj71/Chat-app-Client.git
+featured: true
+order: 3
+status: shipped
+---
+
+## Problem
+
+Learn the full WebSocket lifecycle by building a chat application that handles authentication, multi-room state, and durable message history rather than ephemeral demo messaging.
+
+## Role
+
+Solo build, both client and server. Wrote the WebSocket protocol, authentication handshake, and persistence layer.
+
+## Technical decisions
+
+<Stack items={["Next.js", "Socket.IO", "JWT", "MongoDB", "TypeScript"]} />
+
+- **Auth before subscription.** Sockets must complete a JWT handshake before joining any room — the server validates the token at connection time and rejects unauthenticated upgrades.
+- **Room state on the server.** Rooms are first-class entities in MongoDB; clients query history on join rather than replaying socket events from scratch.
+- **Optimistic UI.** Messages render locally on send and reconcile with the server-issued ID, so the chat feels instant on slow connections.
+
+## Outcome
+
+End-to-end chat with login, multi-room, persistent history, and reconnection handling.
