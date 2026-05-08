@@ -2,38 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-  --bacground-color-main: #020617;
-  --bacground-color-soft: #111827;
-  --main-font-color:#6B7280;
-  --font-color-secondary:#EAB308;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    color-scheme: dark;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-bg text-text font-sans;
+  }
+
+  ::selection {
+    background: rgba(56, 189, 248, 0.25);
+    color: #fafafa;
+  }
+
+  *:focus-visible {
+    outline: 2px solid theme('colors.accent');
+    outline-offset: 2px;
+    border-radius: 2px;
   }
 }
-
-body {
-  color: var(--main-font-color);
-  background: var(--bacground-color-main);
-
-}
-
-.main {
-  padding-top: 4rem;
-  
-}
-
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
   }
 }
