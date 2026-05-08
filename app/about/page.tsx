@@ -3,6 +3,9 @@ import { Section } from '@/components/ui/Section';
 import { Eyebrow } from '@/components/ui/Eyebrow';
 import { Link } from '@/components/ui/Link';
 import { skillGroups } from '@/lib/skills';
+import { fetchContributions, fetchRecentRepos } from '@/lib/github';
+import { ContributionGraph } from '@/components/github/ContributionGraph';
+import { RecentRepos } from '@/components/github/RecentRepos';
 
 export const metadata: Metadata = {
   title: 'About',
@@ -74,15 +77,32 @@ export default function AboutPage() {
         </p>
       </Section>
 
-      <Section className="border-t border-border">
-        <Eyebrow>GitHub</Eyebrow>
-        <h2 className="mt-4 text-3xl font-semibold tracking-tight">
-          Recent activity
-        </h2>
-        <p className="mt-4 text-sm text-text-dim">
-          Live GitHub activity strip lands in Phase 6.
-        </p>
-      </Section>
+      <GitHubSection />
     </>
+  );
+}
+
+async function GitHubSection() {
+  const [contributions, repos] = await Promise.all([
+    fetchContributions(),
+    fetchRecentRepos(),
+  ]);
+  if (!contributions && repos.length === 0) return null;
+  return (
+    <Section className="border-t border-border">
+      <Eyebrow>GitHub</Eyebrow>
+      <h2 className="mt-4 text-3xl font-semibold tracking-tight">
+        Recent activity
+      </h2>
+      {contributions && (
+        <div className="mt-8">
+          <ContributionGraph
+            weeks={contributions.weeks}
+            total={contributions.total}
+          />
+        </div>
+      )}
+      {repos.length > 0 && <RecentRepos repos={repos} />}
+    </Section>
   );
 }

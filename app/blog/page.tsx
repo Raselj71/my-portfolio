@@ -33,7 +33,15 @@ export default function BlogPage() {
           <ul className="flex flex-col">
             {visible.map((post) => (
               <li key={post.slug}>
-                <PostCard post={post} />
+                <PostCard
+                  post={{
+                    url: post.url,
+                    title: post.title,
+                    summary: post.summary,
+                    date: post.date,
+                    readingTime: `${post.readingTime} min read`,
+                  }}
+                />
               </li>
             ))}
           </ul>
