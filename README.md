@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Rasel Ahmed — Personal Portfolio
 
-## Getting Started
+Personal portfolio site. Production URL is set via `NEXT_PUBLIC_SITE_URL` (Vercel-assigned subdomain by default; custom domain TBD).
 
-First, run the development server:
+## Stack
+
+- Next.js 14 (App Router) on Vercel
+- TypeScript, Tailwind CSS, Geist fonts
+- Velite for MDX-based case studies and blog posts
+- Resend for the contact form
+- Vercel Analytics
+- framer-motion for subtle motion (respects prefers-reduced-motion)
+
+## Local development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Local development falls back to `http://localhost:3000` when `NEXT_PUBLIC_SITE_URL` is unset. Set the env vars listed in `.env.local.example` to test the contact form and GitHub strip locally.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Authoring content
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Case studies: `content/work/<slug>.mdx`
+- Blog posts: `content/blog/<slug>.mdx`
+- "Other work" list: `content/other-work.ts`
 
-## Learn More
+Velite watches the directory in dev. After editing frontmatter, the page hot-reloads.
 
-To learn more about Next.js, take a look at the following resources:
+## Scripts
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `npm run dev` — Velite watcher + Next dev server
+- `npm run build` — Velite build + Next build
+- `npm run start` — Next production server
+- `npm run lint` — ESLint
+- `npm run typecheck` — Velite + `tsc --noEmit`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Environment variables
 
-## Deploy on Vercel
+See `.env.local.example`. Required:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `NEXT_PUBLIC_SITE_URL` — public site URL
+- `RESEND_API_KEY` — for the contact form
+- `CONTACT_TO_EMAIL` — your inbox for incoming messages
+- `CONTACT_FROM_EMAIL` — verified Resend sender (or `onboarding@resend.dev` while domain verification is pending)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Optional:
+
+- `GITHUB_TOKEN` — required if you want the contribution graph on the About page (the GitHub GraphQL API does not support unauthenticated requests). The recent-repos list works without one.
