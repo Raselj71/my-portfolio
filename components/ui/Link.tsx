@@ -1,14 +1,15 @@
 import NextLink from 'next/link';
 import { cn } from '@/lib/cn';
-import type { ComponentProps } from 'react';
+import { forwardRef, type ComponentProps } from 'react';
 
 type LinkProps = ComponentProps<typeof NextLink> & {
   variant?: 'primary' | 'ghost' | 'inline';
 };
 
-export function Link({ className, variant = 'inline', ...rest }: LinkProps) {
-  return (
+export const Link = forwardRef<HTMLAnchorElement, LinkProps>(
+  ({ className, variant = 'inline', ...rest }, ref) => (
     <NextLink
+      ref={ref}
       className={cn(
         variant === 'inline' &&
           'text-accent underline-offset-4 hover:underline',
@@ -20,5 +21,6 @@ export function Link({ className, variant = 'inline', ...rest }: LinkProps) {
       )}
       {...rest}
     />
-  );
-}
+  ),
+);
+Link.displayName = 'Link';
