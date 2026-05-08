@@ -1,0 +1,35 @@
+---
+slug: globemart
+title: GlobeMart — Next.js Ecommerce
+summary: Full-stack ecommerce storefront with Stripe checkout, JWT auth, and a Redux-backed cart on top of MongoDB.
+role: Solo developer
+period: "2024"
+stack: [Next.js, TypeScript, Redux, MongoDB, Stripe, JWT]
+cover: /work/globemart/cover.png
+links:
+  live: https://globemart.vercel.app/
+  github: https://github.com/Raselj71/GlobeMart-Nextjs-ecommerce-project.git
+featured: true
+order: 2
+status: shipped
+---
+
+## Problem
+
+Build a complete ecommerce experience end-to-end — product browsing, cart, checkout with real payments, account management — to demonstrate the full Next.js + MongoDB + Stripe stack working together.
+
+## Role
+
+Solo build. Designed the data model, authentication, payment integration, and the storefront UI.
+
+## Technical decisions
+
+<Stack items={["Next.js (App Router)", "TypeScript", "Redux Toolkit", "MongoDB", "Stripe", "JWT auth", "Tailwind CSS"]} />
+
+- **Cart on the client, orders on the server.** Redux Toolkit holds the cart so it survives page navigation; checkout posts to a server route that creates a Stripe session and persists the order to MongoDB.
+- **JWT auth.** Tokens are signed server-side and stored as HTTP-only cookies — no localStorage usage, no client-side secrets.
+- **Stripe webhooks.** Order status reconciles via webhook from Stripe rather than trusting client-side success redirects.
+
+## Outcome
+
+A working storefront with realistic product browsing, cart persistence, and live test-mode payments running on Vercel.

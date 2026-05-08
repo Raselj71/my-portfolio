@@ -183,8 +183,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
-        mono: ['var(--font-mono)', 'ui-monospace', 'monospace'],
+        sans: ['var(--font-geist-sans)', 'system-ui', 'sans-serif'],
+        mono: ['var(--font-geist-mono)', 'ui-monospace', 'monospace'],
       },
       letterSpacing: {
         tighter: '-0.04em',
@@ -512,9 +512,10 @@ type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 };
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant = 'primary', ...rest }, ref) => (
+  ({ className, variant = 'primary', type = 'button', ...rest }, ref) => (
     <button
       ref={ref}
+      type={type}
       className={cn(
         'inline-flex items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-medium transition-colors duration-150 disabled:opacity-50 disabled:pointer-events-none',
         variant === 'primary' &&
@@ -535,15 +536,16 @@ Button.displayName = 'Button';
 ```tsx
 import NextLink from 'next/link';
 import { cn } from '@/lib/cn';
-import type { ComponentProps } from 'react';
+import { forwardRef, type ComponentProps } from 'react';
 
 type LinkProps = ComponentProps<typeof NextLink> & {
   variant?: 'primary' | 'ghost' | 'inline';
 };
 
-export function Link({ className, variant = 'inline', ...rest }: LinkProps) {
-  return (
+export const Link = forwardRef<HTMLAnchorElement, LinkProps>(
+  ({ className, variant = 'inline', ...rest }, ref) => (
     <NextLink
+      ref={ref}
       className={cn(
         variant === 'inline' &&
           'text-accent underline-offset-4 hover:underline',
@@ -555,8 +557,9 @@ export function Link({ className, variant = 'inline', ...rest }: LinkProps) {
       )}
       {...rest}
     />
-  );
-}
+  ),
+);
+Link.displayName = 'Link';
 ```
 
 - [ ] **Step 3: Verify**

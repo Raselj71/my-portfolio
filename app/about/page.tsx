@@ -1,152 +1,108 @@
-import React from "react";
-import Iconelement from "../components/Iconelement";
-import htmlIcon from "@/public/icons8-html-logo-480.png";
-import cssIcon from "@/public/icons8-css-480.png";
-import javascriptIcon from "@/public/icons8-javascript-240.png";
-import nodeIcon from "@/public/icons8-nodejs-480.png";
-import reactIcon from "@/public/pngwing.com.png";
-import dsaIcon from "@/public/dsa.png";
-import javaIcon from "@/public/java.png";
-import androidIcon from "@/public/icons8-android-480.png";
-import mysqlIcon from "@/public/icons8-mysql-240.png";
-import mongoIcon from "@/public/mongodb.png";
-import cIcon from "@/public/c programming.png";
-import cplusIcon from "@/public/c++.png";
-import phpIcon from "@/public/php.png";
-import taliwindIcon from "@/public/icons8-tailwind-css-480.png";
-import gitIcon from "@/public/git.png";
-import awsIcon from "@/public/aws.png";
-import nginxIcon from "@/public/nginx.png";
-import dockerIcon from "@/public/docker.png";
+import type { Metadata } from 'next';
+import { Section } from '@/components/ui/Section';
+import { Eyebrow } from '@/components/ui/Eyebrow';
+import { Link } from '@/components/ui/Link';
+import { skillGroups } from '@/lib/skills';
+import { fetchContributions, fetchRecentRepos } from '@/lib/github';
+import { ContributionGraph } from '@/components/github/ContributionGraph';
+import { RecentRepos } from '@/components/github/RecentRepos';
 
-function page() {
+export const metadata: Metadata = {
+  title: 'About',
+  description:
+    'Software engineer at Dhrubok Infotech Services. Backgrounds in Node.js, Next.js, React Native, and Android.',
+};
+
+export default function AboutPage() {
   return (
-    <section className="flex flex-col bg-[#111827] pb-20">
-      <div className="mt-10 mx-6 md:mx-14 lg:mx-64">
-        <h2 className="border-l-4 inline-block px-2 border-[#EAB308] text-3xl text-white font-semibold ">
-          About
-        </h2>
-        <p className="mt-4 text-xl ">
-          Hi there! I'm Rasel Ahammed, a passionate and dedicated software
-          developer with expertise in a wide range of programming languages and
-          technologies.<br></br> <br></br> Over the years, I've honed my skills
-          in Node.js, JavaScript, HTML, CSS, React, Next.js, and Android
-          development. My journey in the tech world has been fueled by a
-          constant drive to learn and innovate.
-        </p>
-      </div>
-
-      <div className="mt-10 mx-6 md:mx-14 lg:mx-64">
-        <h2 className="border-l-4 inline-block px-2 border-[#EAB308] text-3xl text-white font-semibold ">
-          What I Do
-        </h2>
-        <p className="mt-4 text-xl">
-          I specialize in creating dynamic, user-friendly web and mobile
-          applications. My experience spans across:
-        </p>
-
-        <div className="text-xl mt-3">
+    <>
+      <Section>
+        <Eyebrow>About</Eyebrow>
+        <h1 className="mt-4 text-balance text-4xl font-semibold tracking-tighter md:text-5xl">
+          Software engineer building things that ship.
+        </h1>
+        <div className="mt-8 max-w-prose space-y-4 text-text-muted">
           <p>
-            <span className="font-semibold text-[#EAB308]">
-              Front-end Development:
-            </span>{" "}
-            Utilizing HTML, CSS, JavaScript, React, and Next.js to build
-            responsive and engaging user interfaces
+            I&apos;m Rasel — a software engineer based in Dhaka, Bangladesh.
+            I currently work at Dhrubok Infotech Services, where I shipped{' '}
+            <Link href="/work/sammante">Sammanté</Link>, a multi-tenant SaaS
+            for health-insurance providers, between April and July 2025.
           </p>
-          <p className="mt-4">
-            <span className="font-semibold text-[#EAB308]">
-              Back-end Development:
-            </span>{" "}
-            Leveraging Node.js to develop robust and scalable server-side
-            applications.
+          <p>
+            My day-to-day is mostly Next.js, React, and TypeScript on the web,
+            React Native on mobile, and Node on the backend. I also write
+            Android apps in Java when the project calls for it.
           </p>
-          <p className="mt-4">
-            <span className="font-semibold text-[#EAB308]">
-              Mobile Development:
-            </span>{" "}
-            Crafting seamless Android applications with Java.
-          </p>
-          <p className="mt-4">
-            <span className="font-semibold text-[#EAB308]">
-              {" "}
-              Data Structures and Algorithms:
-            </span>{" "}
-            Applying efficient algorithms and data structures to solve complex
-            problems and optimize performance.
+          <p>
+            Outside paid work I run a YouTube channel teaching practical
+            programming, and I publish notes on this site about things I
+            learn while shipping.
           </p>
         </div>
-      </div>
+      </Section>
 
-      <div className="mt-10 mx-6 md:mx-14 lg:mx-64">
-        <h2 className="border-l-4 inline-block px-2 border-[#EAB308] text-3xl text-white font-semibold ">
-          Experience with
+      <Section className="border-t border-border">
+        <Eyebrow>Skills</Eyebrow>
+        <h2 className="mt-4 text-3xl font-semibold tracking-tight">
+          Tools I work with
         </h2>
-        <div className="mt-4 relative grid grid-cols-2 gap-y-3 md:grid-cols-3 lg:grid-cols-4 -lg:gap-x-8">
-          {/* <Iconelement logo={cIcon} text={"C programming"} />
-          <Iconelement logo={cplusIcon} text={"C++"} />
-          <Iconelement logo={javascriptIcon} text={"Javascript"} />
-          <Iconelement logo={phpIcon} text={"PHP"} />
-
-          <Iconelement logo={javaIcon} text={"Java"} />
-          <Iconelement logo={dsaIcon} text={"DSA & algorithms"} />
-          <Iconelement logo={htmlIcon} text={"HTML"} />
-          <Iconelement logo={cssIcon} text={"CSS"} />
-          <Iconelement logo={taliwindIcon} text={"Tailwind CSS"} />
-
-          <Iconelement logo={reactIcon} text={"React js"} />
-          <Iconelement logo={nodeIcon} text={"Node js"} />
-
-          <Iconelement logo={androidIcon} text={"Android"} />
-          <Iconelement logo={mysqlIcon} text={"MySql"} />
-          <Iconelement logo={mongoIcon} text={"Mongodb"} />
-
-          <Iconelement logo={gitIcon} text={"Git & Github"} />
-          <Iconelement logo={awsIcon} text={"AWS"} />
-          <Iconelement logo={nginxIcon} text={"NGINX Server"} />
-          <Iconelement logo={dockerIcon} text={"docker"} /> */}
-
-          <Iconelement logo={"/c++.png"} text={"C programming"} />
-          <Iconelement logo={"c++.png"} text={"C++"} />
-          <Iconelement
-            logo={"/icons8-javascript-240.png"}
-            text={"Javascript"}
-          />
-          <Iconelement logo={"/php.png"} text={"PHP"} />
-
-          <Iconelement logo={"/java.png"} text={"Java"} />
-          <Iconelement logo={"/dsa.png"} text={"DSA & algorithms"} />
-          <Iconelement logo={"/icons8-html-logo-480.png"} text={"HTML"} />
-          <Iconelement logo={"/icons8-css-480.png"} text={"CSS"} />
-          <Iconelement
-            logo={"/icons8-tailwind-css-480.png"}
-            text={"Tailwind CSS"}
-          />
-
-          <Iconelement logo={"/pngwing.com.png"} text={"React js"} />
-          <Iconelement logo={"/icons8-nodejs-480.png"} text={"Node js"} />
-
-          <Iconelement logo={"/icons8-android-480.png"} text={"Android"} />
-          <Iconelement logo={"/icons8-mysql-240.png"} text={"MySql"} />
-          <Iconelement logo={"/mongodb.png"} text={"Mongodb"} />
-
-          <Iconelement logo={"/git.png"} text={"Git & Github"} />
-          <Iconelement logo={"/aws.png"} text={"AWS"} />
-          <Iconelement logo={"/nginx.png"} text={"NGINX Server"} />
-          <Iconelement logo={"/docker.png"} text={"docker"} />
+        <div className="mt-8 grid gap-8 md:grid-cols-2">
+          {skillGroups.map((group) => (
+            <div key={group.label}>
+              <div className="font-mono text-sm uppercase tracking-wider text-text-dim">
+                {group.label}
+              </div>
+              <ul className="mt-2 flex flex-wrap gap-2">
+                {group.items.map((item) => (
+                  <li
+                    key={item}
+                    className="rounded-md border border-border bg-surface/40 px-3 py-1 text-sm text-text"
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
-      </div>
+      </Section>
 
-      <div className="mt-10 mx-6 md:mx-14 lg:mx-64">
-        <h2 className="border-l-4 inline-block px-2 border-[#EAB308] text-3xl text-white font-semibold ">
-          Education
+      <Section className="border-t border-border">
+        <Eyebrow>Education</Eyebrow>
+        <h2 className="mt-4 text-3xl font-semibold tracking-tight">
+          Bachelor of Computer Science and Engineering
         </h2>
-        <p className="mt-4 text-lg">
-          Currently enrolling Bachelor of Computer Science and Engineering at
-          Greeen University of Bangladesh and expected to graducate in 2026.
+        <p className="mt-4 max-w-prose text-text-muted">
+          Green University of Bangladesh. Expected graduation 2026.
         </p>
-      </div>
-    </section>
+      </Section>
+
+      <GitHubSection />
+    </>
   );
 }
 
-export default page;
+async function GitHubSection() {
+  const [contributions, repos] = await Promise.all([
+    fetchContributions(),
+    fetchRecentRepos(),
+  ]);
+  if (!contributions && repos.length === 0) return null;
+  return (
+    <Section className="border-t border-border">
+      <Eyebrow>GitHub</Eyebrow>
+      <h2 className="mt-4 text-3xl font-semibold tracking-tight">
+        Recent activity
+      </h2>
+      {contributions && (
+        <div className="mt-8">
+          <ContributionGraph
+            weeks={contributions.weeks}
+            total={contributions.total}
+          />
+        </div>
+      )}
+      {repos.length > 0 && <RecentRepos repos={repos} />}
+    </Section>
+  );
+}
