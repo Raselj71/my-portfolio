@@ -24,9 +24,14 @@ export function Hero() {
             <Link href="/work" variant="primary">
               View work →
             </Link>
-            <Link href={site.resumePath} variant="ghost">
+            <a
+              href={site.resumePath}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-md border border-border-strong bg-surface/40 px-4 py-2 text-sm font-medium text-text transition-colors duration-150 hover:bg-surface-hover"
+            >
               Resume ↗
-            </Link>
+            </a>
           </div>
         </div>
         <div className="order-1 mx-auto md:order-2 md:flex-shrink-0">

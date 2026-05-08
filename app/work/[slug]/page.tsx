@@ -72,7 +72,7 @@ export default function CaseStudyPage({ params }: { params: Params }) {
         ))}
       </ul>
 
-      <article className="prose-portfolio mt-12 max-w-3xl">
+      <article className="mt-12 max-w-3xl">
         <MDX code={item.body} />
       </article>
 
