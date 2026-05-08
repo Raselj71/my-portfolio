@@ -37,7 +37,7 @@ export default function PostPage({ params }: { params: Params }) {
 
   return (
     <Section>
-      <PostMeta date={post.date} readingTime={`${post.readingTime} min read`} />
+      <PostMeta date={post.date} readingTime={post.readingTime} />
       <h1 className="mt-4 max-w-3xl text-balance text-4xl font-semibold tracking-tighter md:text-5xl">
         {post.title}
       </h1>

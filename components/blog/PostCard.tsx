@@ -6,7 +6,7 @@ export type PostSummary = {
   title: string;
   summary: string;
   date: string;
-  readingTime?: string;
+  readingTime?: number;
 };
 
 export function PostCard({ post }: { post: PostSummary }) {

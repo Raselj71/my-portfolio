@@ -3,7 +3,7 @@ export function PostMeta({
   readingTime,
 }: {
   date: string;
-  readingTime?: string;
+  readingTime?: number;
 }) {
   const formatted = new Date(date).toLocaleDateString('en-US', {
     year: 'numeric',
@@ -13,7 +13,9 @@ export function PostMeta({
   return (
     <div className="font-mono text-xs uppercase tracking-wider text-text-dim">
       <time dateTime={date}>{formatted}</time>
-      {readingTime && <span className="ml-3">· {readingTime}</span>}
+      {readingTime ? (
+        <span className="ml-3">· {readingTime} min read</span>
+      ) : null}
     </div>
   );
 }
