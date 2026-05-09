@@ -1,0 +1,56 @@
+---
+slug: rebuilding-my-portfolio
+title: Rebuilding my portfolio in a day
+date: 2026-05-09
+summary: Notes on dropping a broken static-export site, picking up SSR + MDX + Resend, and shipping it on Vercel — plus a few decisions I'd make again and one I wouldn't.
+tags: [next.js, mdx, vercel]
+draft: false
+---
+
+The old version of this site had been quietly broken for months. The contact form rendered, took a message, and silently dropped it: I'd configured `output: "export"` in `next.config.mjs` for a static deploy, then added an `app/api/email/route.ts` later — and Next quietly drops API routes during static export. No build error, no runtime error. Just a black hole on the most important page.
+
+That's the kind of thing you only notice when a recruiter emails to ask why the form didn't go through.
+
+So this weekend I rebuilt the whole thing — visual system, content model, deployment. Here are the decisions worth keeping notes on.
+
+## Drop the static export
+
+The first call was to stop fighting `output: "export"`. The original argument for it was "free hosting on anything." The cost was: no API routes, no `next/image` optimization, no `generateMetadata` per page that depends on data, no incremental routing. For a site with case studies and a blog and a contact form, that's most of Next.
+
+I switched to plain SSR on Vercel. Free tier. Build pipeline is shorter (no static export step), DX is way better (server actions just work), and the contact form actually sends mail.
+
+## Velite for MDX
+
+For the case studies and blog I needed MDX with type-safe frontmatter. The three options I weighed:
+
+- **`next-mdx-remote`** — minimal, but every page needs to read and parse files itself. No frontmatter validation. Works fine for one author and ten files; falls apart at scale.
+- **Contentlayer** — once the obvious choice, but development has stalled. Adopting an unmaintained core dep for a personal site is a future-me problem I'd rather avoid.
+- **Velite** — what I picked. Reads MDX from a `content/` directory at build time, validates frontmatter against Zod schemas, and emits a typed JSON module you import like any other library. `import { caseStudies } from '@/.velite'` and you get the full type. ~5 minutes of setup.
+
+The Zod schema pays for itself the first time you typo a frontmatter field. `period: 2024` (a number) versus `period: "2024"` (a string) — the build fails immediately with a useful message.
+
+## Resend for the contact form
+
+The previous form used `nodemailer` with Gmail SMTP. That stack works until Gmail decides your app password rotated, or 2FA changes, or your account gets flagged. I've debugged enough of those to want a transactional-email service that's just an API call.
+
+Resend's free tier is 3,000 emails/month. The whole API surface for what I need is one function:
+
+```ts
+await client.emails.send({ from, to, replyTo, subject, text });
+```
+
+Plus a Zod schema, a honeypot field, and a 5-per-minute-per-IP rate limit. The route handler is 50 lines.
+
+## One thing I'd do differently
+
+I added scroll-reveal animations to the case-study cards on the homepage — they start at `opacity: 0` and fade in when scrolled into view. It looked good in isolation. In context, with a dark theme and cards that had no cover images yet, the homepage looked completely empty above the fold.
+
+The fix was to drop the wrapper. Cards are visible from the start; the page-level fade-in handles "did the page load?" affordance well enough.
+
+The lesson: motion that hides content is a motion budget you have to earn back. If your initial impression is "is this page broken?", the animation lost. Reveal-on-scroll works for galleries with twenty items. For three cards, it was overhead.
+
+## What's left
+
+A custom domain. A real screenshot for Sammanté once the team approves which screens are publishable. A few more case-study pages over the next few months as projects ship. And eventually — maybe — a writeup of the multi-tenant data model patterns from Sammanté itself, if the NDA window opens up.
+
+The portfolio is no longer the broken thing. The plan now is to write here often enough that "active" is a true thing to put on it.
