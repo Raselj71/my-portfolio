@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <defs>
+    <radialGradient id="glow" cx="60%" cy="0%" r="65%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.22"/>
+      <stop offset="55%" stop-color="#38bdf8" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="title" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fafafa"/>
+      <stop offset="100%" stop-color="#a1a1aa"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="#0a0a0a"/>
+  <rect width="1600" height="900" fill="url(#glow)"/>
+  <g transform="translate(120 240)">
+    <text font-family="ui-monospace,Menlo,Consolas,monospace" font-size="28" font-weight="500" fill="#38bdf8" letter-spacing="6">SAAS · MULTI-TENANT</text>
+    <text y="180" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,system-ui,sans-serif" font-size="160" font-weight="700" fill="url(#title)" letter-spacing="-5">Sammanté</text>
+    <text y="280" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,system-ui,sans-serif" font-size="48" font-weight="500" fill="#a1a1aa">Health insurance platform</text>
+  </g>
+  <g transform="translate(120 800)" font-family="ui-monospace,Menlo,Consolas,monospace" font-size="24" fill="#71717a">
+    <text>Apr 2025 – Jul 2025  ·  Dhrubok Infotech Services</text>
+  </g>
+  <g transform="translate(1240 760)" stroke="#38bdf8" stroke-width="2" fill="none" opacity="0.4">
+    <rect x="0" y="0" width="240" height="80" rx="8"/>
+    <text x="120" y="50" text-anchor="middle" font-family="ui-monospace,Menlo,Consolas,monospace" font-size="22" fill="#38bdf8" stroke="none">portal.sammante.sn</text>
+  </g>
+</svg>
