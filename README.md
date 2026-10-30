@@ -1,15 +1,22 @@
-# Rasel Ahmed — Personal Portfolio
+# Rasel Ahammed — Personal Portfolio
 
 Personal portfolio site. Production URL is set via `NEXT_PUBLIC_SITE_URL` (Vercel-assigned subdomain by default; custom domain TBD).
 
 ## Stack
 
 - Next.js 14 (App Router) on Vercel
-- TypeScript, Tailwind CSS, Geist fonts
+- TypeScript, Tailwind CSS, Sora + Inter via `next/font/google`
 - Velite for MDX-based case studies and blog posts
 - Resend for the contact form
 - Vercel Analytics
-- framer-motion for subtle motion (respects prefers-reduced-motion)
+- CSS-only motion (one hero entrance, one-time section reveals), disabled under `prefers-reduced-motion`
+
+## Theme and data (v2)
+
+- Light and dark themes are CSS variables in `app/globals.css` (`:root` and `[data-theme="dark"]`), exposed to Tailwind in `tailwind.config.ts`. `components/theme/ThemeScript.tsx` applies the saved or system theme before paint; `ThemeToggle` flips it and stores the choice under `localStorage.theme`.
+- Homepage content is data-driven: MobileMint apps in `lib/apps.ts`, roles in `lib/experience.ts`, the tech stack in `lib/stack.ts`, the three project cards in `lib/projects.ts`, and links/nav in `lib/site.ts`.
+- To add an app: drop its icon at `public/apps/<slug>.png` and append an entry to `lib/apps.ts`. Do not add install counts or ratings.
+- Design spec and plan: `docs/superpowers/specs/2026-10-30-portfolio-v2-design.md`, `docs/superpowers/plans/2026-10-30-portfolio-v2.md`.
 
 ## Local development
 
