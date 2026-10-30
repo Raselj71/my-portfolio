@@ -127,11 +127,17 @@
 
 @media (prefers-reduced-motion: reduce) {
   .anim-rise,
-  .anim-phone,
   .reveal {
     animation: none !important;
     opacity: 1 !important;
     transform: none !important;
+    transition: none !important;
+  }
+  /* Phones keep their layout transforms (rotation, centring); only the entrance goes. */
+  .anim-phone {
+    animation: none !important;
+    opacity: 1 !important;
+    translate: none !important;
     transition: none !important;
   }
   html {

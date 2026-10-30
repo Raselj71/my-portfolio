@@ -20,7 +20,7 @@ export function NavClient({ items, resumePath }: Props) {
 
   return (
     <>
-      <ul className="hidden items-center gap-6 text-sm text-muted md:flex">
+      <ul className="hidden items-center gap-6 text-sm text-muted nav:flex">
         {items.map((item) => (
           <li key={item.href}>
             <NextLink
@@ -41,7 +41,7 @@ export function NavClient({ items, resumePath }: Props) {
           aria-expanded={open}
           aria-controls="mobile-nav"
           onClick={() => setOpen((v) => !v)}
-          className="grid size-[38px] place-items-center rounded-[9px] border border-line bg-surface text-muted md:hidden"
+          className="grid size-[38px] place-items-center rounded-[9px] border border-line bg-surface text-muted nav:hidden"
         >
           <svg
             viewBox="0 0 24 24"
@@ -64,7 +64,7 @@ export function NavClient({ items, resumePath }: Props) {
           href={resumePath}
           target="_blank"
           rel="noreferrer"
-          className="hidden rounded-[9px] bg-text px-3.5 py-2 text-[13px] font-semibold text-bg transition-transform duration-200 hover:-translate-y-px md:inline-block"
+          className="hidden rounded-[9px] bg-text px-3.5 py-2 text-[13px] font-semibold text-bg transition-transform duration-200 hover:-translate-y-px nav:inline-block"
         >
           Download resume
         </a>
@@ -74,7 +74,7 @@ export function NavClient({ items, resumePath }: Props) {
         id="mobile-nav"
         aria-label="Mobile"
         className={cn(
-          'absolute inset-x-0 top-full flex-col border-b border-line bg-bg px-5 pb-3.5 pt-2.5 md:hidden',
+          'absolute inset-x-0 top-full flex-col border-b border-line bg-bg px-5 pb-3.5 pt-2.5 nav:hidden',
           open ? 'flex' : 'hidden',
         )}
         onClick={() => setOpen(false)}

@@ -25,13 +25,13 @@ npm install
 npm run dev
 ```
 
-Local development falls back to `http://localhost:3000` when `NEXT_PUBLIC_SITE_URL` is unset. Set the env vars listed in `.env.local.example` to test the contact form and GitHub strip locally.
+Local development falls back to `http://localhost:3000` when `NEXT_PUBLIC_SITE_URL` is unset. Set the env vars listed in `.env.local.example` to test the contact form locally.
 
 ## Authoring content
 
 - Case studies: `content/work/<slug>.mdx`
 - Blog posts: `content/blog/<slug>.mdx`
-- "Other work" list: `content/other-work.ts`
+- Homepage data: `lib/apps.ts`, `lib/experience.ts`, `lib/stack.ts`, `lib/projects.ts`
 
 Velite watches the directory in dev. After editing frontmatter, the page hot-reloads.
 
@@ -51,7 +51,3 @@ See `.env.local.example`. Required:
 - `RESEND_API_KEY` — for the contact form
 - `CONTACT_TO_EMAIL` — your inbox for incoming messages
 - `CONTACT_FROM_EMAIL` — verified Resend sender (or `onboarding@resend.dev` while domain verification is pending)
-
-Optional:
-
-- `GITHUB_TOKEN` — required if you want the contribution graph on the About page (the GitHub GraphQL API does not support unauthenticated requests). The recent-repos list works without one.

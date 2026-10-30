@@ -41,6 +41,16 @@ Date: 2026-10-30. Branch `redesign-v2`. Production build served with `next start
 
 - Found and fixed: the Next image optimizer hung indefinitely on `deen-screen.png` at width 256 (RGBA PNG), stalling other image requests behind it. All screenshots were re-encoded as plain RGB PNG, app icons capped at 512 px RGBA, `profile.png` re-saved. After that, every width from 32 to 1080 for every hero and card image returns 200 in under 0.2 s.
 
+## Post-review fixes (whole-branch review, 2026-10-30)
+
+| Finding | Before | After |
+|---|---|---|
+| Phone fan under `prefers-reduced-motion` | right phone 222..334 hidden behind centre 188..338 at 390 px | centre 113..263, right 222..353, all three visible |
+| Nav breakpoint | inline links at 768 px, brand wrapped to 48 px tall | menu below 900 px; at 768 brand 28 px, at 900 inline links fit |
+| Active nav underline | stayed on "Stack" after navigating to `/work/sammante` and at page top | cleared at top and on route change |
+| Sitemap | listed `/about` (a 307) | removed |
+| Docs | README and `.env.local.example` described deleted GitHub strip and other-work list | removed |
+
 ## Screenshots
 
 Captured by the Playwright MCP into `.playwright-mcp/` (not committed): homepage 1280 light and dark, 390 dark, 820 light; `/work`, `/work/chain-vpn`, `/contact`.

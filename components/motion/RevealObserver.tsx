@@ -36,14 +36,19 @@ export function RevealObserver() {
       .map((a) => document.getElementById(a.dataset.section ?? ''))
       .filter((el): el is HTMLElement => el !== null);
 
+    const visible = new Set<string>();
+    const setActive = (id: string | null) =>
+      links.forEach((a) => a.classList.toggle('is-active', a.dataset.section === id));
+
     const sectionObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          links.forEach((a) =>
-            a.classList.toggle('is-active', a.dataset.section === entry.target.id),
-          );
+          if (entry.isIntersecting) visible.add(entry.target.id);
+          else visible.delete(entry.target.id);
         });
+        // Highlight the last section that is still in the band; none in the hero.
+        const current = sections.map((s) => s.id).filter((id) => visible.has(id)).pop() ?? null;
+        setActive(current);
       },
       { rootMargin: '-40% 0px -55% 0px' },
     );
@@ -52,6 +57,7 @@ export function RevealObserver() {
     return () => {
       revealObserver.disconnect();
       sectionObserver.disconnect();
+      setActive(null);
     };
   }, []);
 

@@ -15,6 +15,10 @@ const config: Config = {
       screens: { '2xl': '1200px' },
     },
     extend: {
+      screens: {
+        // Inline navigation appears at and above this width (spec: mobile menu below 900 px).
+        nav: '900px',
+      },
       colors: {
         bg: token('bg'),
         surface: token('surface'),
