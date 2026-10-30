@@ -11,7 +11,7 @@ export function PostMeta({
     day: 'numeric',
   });
   return (
-    <div className="font-mono text-xs uppercase tracking-wider text-text-dim">
+    <div className="text-xs text-dim">
       <time dateTime={date}>{formatted}</time>
       {readingTime ? (
         <span className="ml-3">· {readingTime} min read</span>

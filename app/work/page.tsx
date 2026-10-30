@@ -19,10 +19,10 @@ export default function WorkPage() {
     <>
       <Section>
         <Eyebrow>Work</Eyebrow>
-        <h1 className="mt-4 text-balance text-4xl font-semibold tracking-tighter md:text-5xl">
+        <h1 className="mt-4 text-balance font-display text-4xl font-semibold tracking-tighter md:text-5xl">
           Work
         </h1>
-        <p className="mt-4 max-w-prose text-text-muted">
+        <p className="mt-4 max-w-prose text-muted">
           Case studies for the products I've built.
         </p>
 

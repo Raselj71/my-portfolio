@@ -18,7 +18,7 @@ export function ContactInfo() {
     <ul className="space-y-4">
       {items.map((item) => (
         <li key={item.label} className="flex flex-col gap-1">
-          <span className="font-mono text-xs uppercase tracking-wider text-text-dim">
+          <span className="text-xs text-dim">
             {item.label}
           </span>
           {item.href ? (

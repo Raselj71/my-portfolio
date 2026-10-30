@@ -14,10 +14,10 @@ export default function ContactPage() {
   return (
     <Section>
       <Eyebrow>Contact</Eyebrow>
-      <h1 className="mt-4 text-balance text-4xl font-semibold tracking-tighter md:text-5xl">
+      <h1 className="mt-4 text-balance font-display text-4xl font-semibold tracking-tighter md:text-5xl">
         Let&apos;s work together.
       </h1>
-      <p className="mt-4 max-w-prose text-text-muted">
+      <p className="mt-4 max-w-prose text-muted">
         Roles, freelance, or just a quick hello — pick a channel below or use
         the form. I usually reply within a day.
       </p>

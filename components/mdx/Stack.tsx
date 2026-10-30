@@ -4,7 +4,7 @@ export function Stack({ items }: { items: string[] }) {
       {items.map((item) => (
         <li
           key={item}
-          className="rounded-full border border-border-strong bg-surface/40 px-3 py-1 font-mono text-xs text-text-muted"
+          className="rounded-full border border-line bg-surface2 px-3 py-1 text-xs text-muted"
         >
           {item}
         </li>

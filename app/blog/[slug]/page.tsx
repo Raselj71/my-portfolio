@@ -38,17 +38,17 @@ export default function PostPage({ params }: { params: Params }) {
   return (
     <Section>
       <PostMeta date={post.date} readingTime={post.readingTime} />
-      <h1 className="mt-4 max-w-3xl text-balance text-4xl font-semibold tracking-tighter md:text-5xl">
+      <h1 className="mt-4 max-w-3xl text-balance font-display text-4xl font-semibold tracking-tighter md:text-5xl">
         {post.title}
       </h1>
-      <p className="mt-4 max-w-prose text-text-muted">{post.summary}</p>
+      <p className="mt-4 max-w-prose text-muted">{post.summary}</p>
 
       <article className="mt-12 max-w-3xl">
         <MDX code={post.body} />
       </article>
 
-      <div className="mt-16 border-t border-border pt-8">
-        <Link href="/blog">← All posts</Link>
+      <div className="mt-16 border-t border-line pt-8">
+        <Link href="/blog">All posts</Link>
       </div>
     </Section>
   );
