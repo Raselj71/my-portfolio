@@ -38,14 +38,14 @@ export default function CaseStudyPage({ params }: { params: Params }) {
   return (
     <Section>
       <Eyebrow>{item.period}</Eyebrow>
-      <h1 className="mt-4 max-w-3xl text-balance text-4xl font-semibold tracking-tighter md:text-5xl">
+      <h1 className="mt-4 max-w-3xl text-balance font-display text-4xl font-semibold tracking-tighter md:text-5xl">
         {item.title}
       </h1>
-      <p className="mt-4 max-w-prose text-text-muted">{item.summary}</p>
+      <p className="mt-4 max-w-prose text-muted">{item.summary}</p>
 
-      <div className="mt-6 flex flex-col gap-3 border-y border-border py-6 md:flex-row md:items-center md:justify-between">
-        <div className="text-sm text-text-muted">
-          <span className="font-mono uppercase tracking-wider text-text-dim">
+      <div className="mt-6 flex flex-col gap-3 border-y border-line py-6 md:flex-row md:items-center md:justify-between">
+        <div className="text-sm text-muted">
+          <span className="text-dim">
             Role
           </span>
           <span className="ml-3">{item.role}</span>
@@ -76,8 +76,8 @@ export default function CaseStudyPage({ params }: { params: Params }) {
         <MDX code={item.body} />
       </article>
 
-      <div className="mt-16 border-t border-border pt-8">
-        <Link href="/work">← All work</Link>
+      <div className="mt-16 border-t border-line pt-8">
+        <Link href="/work">All work</Link>
       </div>
     </Section>
   );

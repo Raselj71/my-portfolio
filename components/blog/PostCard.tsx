@@ -13,13 +13,13 @@ export function PostCard({ post }: { post: PostSummary }) {
   return (
     <NextLink
       href={post.url}
-      className="group block border-b border-border py-8 transition-colors first:border-t hover:bg-surface/30"
+      className="group block border-b border-line py-8 transition-colors first:border-t hover:bg-surface2"
     >
       <PostMeta date={post.date} readingTime={post.readingTime} />
-      <h3 className="mt-2 text-2xl font-semibold tracking-tight text-text group-hover:text-accent">
+      <h3 className="mt-2 font-display font-display text-2xl font-semibold tracking-tight text-text group-hover:text-accent">
         {post.title}
       </h3>
-      <p className="mt-2 max-w-prose text-text-muted">{post.summary}</p>
+      <p className="mt-2 max-w-prose text-muted">{post.summary}</p>
     </NextLink>
   );
 }

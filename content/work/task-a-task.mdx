@@ -1,38 +1,35 @@
 ---
 slug: task-a-task
-title: Task a Task — Mobile Task Manager
-summary: React Native task manager focused on quick capture and clean daily review.
-role: Solo developer
-period: "2025"
-stack: [React Native, TypeScript]
-cover: /work/task-a-task/cover.svg
+title: TaskATask — Work Together
+summary: Team task management with templates, hand-offs, group chat, and voice and video calls for Android, iOS, and web.
+role: Lead developer @ Dhrubok Info Tech Services
+period: 2025 – Present
+stack: [Expo, React Native, TypeScript, Twilio Video, CallKit, ConnectionService, Firebase]
+cover: /screens/tat-screen.png
 links:
-  live: null
+  live: https://play.google.com/store/apps/details?id=com.taska.task
   github: null
 featured: true
-order: 4
+order: 1
 status: shipped
 ---
 
 ## Problem
 
-A task app that gets out of the way: quick capture, light visual hierarchy, no setup screens. Optimized for the daily-review-and-plan loop rather than power-user features.
+Teams that hand work back and forth, such as field and service crews, agencies, and small businesses, were running tasks in one app, conversations in another, and costs in a spreadsheet. Commitments disappeared between tools.
 
 ## Role
 
-Solo build on React Native.
+Lead developer of the mobile app since its first commit in July 2025. I set up the Expo and React Native codebase, the multi-environment EAS pipeline, and the testing setup, and I own the calling feature end to end.
 
 ## Technical decisions
 
-<Stack items={["React Native", "TypeScript"]} />
+<Stack items={["Expo", "React Native", "Twilio Video", "CallKit", "PushKit", "ConnectionService", "Firebase Cloud Messaging"]} />
 
-- **Single-purpose screens.** Capture, today, and review are separate flows rather than nested tabs in one giant screen.
-- **Local-first.** Tasks live on-device by default; sync is optional and additive rather than the core loop.
-
-## Outcome
-
-Daily-driver task app for personal use; informed the prioritization patterns I now apply to other product work.
+- **Calls that behave like phone calls.** One-to-one and group audio and video on Twilio Video, with CallKit and PushKit on iOS and ConnectionService with a foreground service on Android. Calls ring on the lock screen and from a cold start, and video continues in picture-in-picture.
+- **Native modules where JavaScript is not enough.** Custom VoIP push and lock-screen modules, plus Expo config plugins for the native pieces.
+- **One codebase, three platforms.** The same calling and chat code runs in the Android, iOS, and web builds.
 
 <Aside>
-  Live store link and screenshots to be added by the author.
+  Available on Google Play. The app is a product of Dhrubok Info Tech Services; screenshots shown are from the public store listing.
 </Aside>

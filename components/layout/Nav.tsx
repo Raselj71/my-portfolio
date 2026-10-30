@@ -1,20 +1,27 @@
+import Image from 'next/image';
 import NextLink from 'next/link';
 import { Container } from '@/components/ui/Container';
 import { site } from '@/lib/site';
-import { NavLinks } from './NavLinks';
+import { NavClient } from './NavClient';
 
 export function Nav() {
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-bg/80 backdrop-blur-md">
-      <Container className="flex h-16 items-center justify-between">
+    <header className="sticky top-0 z-50 border-b border-line bg-bg">
+      <Container className="relative flex h-16 items-center justify-between">
         <NextLink
           href="/"
-          className="text-base font-semibold tracking-tight text-text"
+          className="flex items-center gap-2.5 font-display text-base font-semibold text-text"
         >
-          {site.name.split(' ')[0].toLowerCase()}
-          <span className="text-accent">.</span>
+          <Image
+            src="/profile.png"
+            alt=""
+            width={28}
+            height={28}
+            className="size-7 rounded-full bg-surface2 object-cover"
+          />
+          {site.name}
         </NextLink>
-        <NavLinks items={site.nav} />
+        <NavClient items={site.nav} resumePath={site.resumePath} />
       </Container>
     </header>
   );

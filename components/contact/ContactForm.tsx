@@ -48,7 +48,7 @@ export function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
       <div className="flex flex-col gap-2">
-        <label htmlFor="name" className="text-sm text-text-muted">
+        <label htmlFor="name" className="text-sm text-muted">
           Name
         </label>
         <input
@@ -56,11 +56,11 @@ export function ContactForm() {
           name="name"
           required
           maxLength={120}
-          className="rounded-md border border-border bg-surface px-3 py-2 text-text outline-none transition-colors focus:border-accent"
+          className="rounded-btn border border-line bg-surface px-3 py-2 text-text outline-none transition-colors focus:border-accent"
         />
       </div>
       <div className="flex flex-col gap-2">
-        <label htmlFor="email" className="text-sm text-text-muted">
+        <label htmlFor="email" className="text-sm text-muted">
           Email
         </label>
         <input
@@ -69,11 +69,11 @@ export function ContactForm() {
           type="email"
           required
           maxLength={200}
-          className="rounded-md border border-border bg-surface px-3 py-2 text-text outline-none transition-colors focus:border-accent"
+          className="rounded-btn border border-line bg-surface px-3 py-2 text-text outline-none transition-colors focus:border-accent"
         />
       </div>
       <div className="flex flex-col gap-2">
-        <label htmlFor="message" className="text-sm text-text-muted">
+        <label htmlFor="message" className="text-sm text-muted">
           Message
         </label>
         <textarea
@@ -83,7 +83,7 @@ export function ContactForm() {
           minLength={10}
           maxLength={5000}
           rows={6}
-          className="resize-y rounded-md border border-border bg-surface px-3 py-2 text-text outline-none transition-colors focus:border-accent"
+          className="resize-y rounded-btn border border-line bg-surface px-3 py-2 text-text outline-none transition-colors focus:border-accent"
         />
       </div>
 

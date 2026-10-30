@@ -1,0 +1,50 @@
+---
+slug: chain-vpn
+title: "Chain VPN — Mobile App, Admin Panel & Open-Source OpenVPN Library"
+summary: "End-to-end VPN product for a client: a React Native app with OpenVPN, Play Billing, and AdMob; a Next.js admin panel; and react-native-ovpn, published to npm."
+role: Full-stack developer (client project)
+period: Mar 2026 – May 2026
+stack: [React Native, Expo, TypeScript, Next.js 15, Prisma, MongoDB, OpenVPN]
+cover: /work/chain-vpn/admin.png
+links:
+  live: https://www.npmjs.com/package/react-native-ovpn
+  github: https://github.com/Raselj71/react-native-ovpn
+featured: true
+order: 3
+status: shipped
+---
+
+## Problem
+
+A client needed a complete VPN product: a consumer app with paid tiers, an operations panel to run servers and subscriptions, and a reliable OpenVPN integration on both platforms. Nothing off the shelf covered all three.
+
+## Mobile app
+
+<Stack items={["React Native", "Expo SDK 54", "TypeScript", "Zustand", "MMKV", "Google Play Billing", "AdMob", "Firebase Cloud Messaging"]} />
+
+- OpenVPN connect and disconnect with live bandwidth stats and session duration.
+- Free and premium server tiers with country flags.
+- Google Play Billing subscriptions (weekly, monthly, yearly) with server-side receipt verification.
+- AdMob interstitial, banner, and rewarded ads; a rewarded ad grants trial premium.
+- Push notifications over Firebase Cloud Messaging.
+- Battery-optimisation exemption flow so OEMs do not kill the service.
+- Foreground service notification, kill switch, custom DNS, auto-reconnect.
+- MMKV-backed offline state with native-side reconciliation when the app reopens.
+
+## Admin panel
+
+<Stack items={["Next.js 15", "Prisma", "MongoDB Atlas", "Tailwind", "Zod"]} />
+
+- Server CRUD with a country flag picker and `.ovpn` config upload.
+- User and subscription management with block and unblock.
+- Push notification composer targeted by platform or device.
+- AdMob configuration: app IDs, ad-unit IDs, frequency caps, rewarded ad copy.
+- Announcements, promo codes, audit logs.
+- JWT auth with HTTP-only cookies and Zod-validated APIs.
+
+## Open-source library
+
+The OpenVPN core was extracted from the client project, cleaned up, and published to npm as `react-native-ovpn`. It is a TurboModule for the React Native New Architecture with an Expo config plugin, so there is no manual native setup. It wraps ics-openvpn on Android and OpenVPNAdapter on iOS.
+
+<Outcome metric="Three deliverables" detail="Consumer app, admin panel, and a reusable library shipped together." />
+<Outcome metric="Open source" detail="react-native-ovpn is on npm and GitHub for other teams to use." />

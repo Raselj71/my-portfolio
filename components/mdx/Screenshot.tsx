@@ -15,11 +15,11 @@ export function Screenshot({
 }) {
   return (
     <figure className="my-8">
-      <div className="overflow-hidden rounded-lg border border-border">
+      <div className="overflow-hidden rounded-card border border-line">
         <Image src={src} alt={alt} width={width} height={height} />
       </div>
       {caption && (
-        <figcaption className="mt-2 text-sm text-text-dim">
+        <figcaption className="mt-2 text-sm text-dim">
           {caption}
         </figcaption>
       )}

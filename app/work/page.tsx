@@ -3,13 +3,11 @@ import { caseStudies } from '@/.velite';
 import { Section } from '@/components/ui/Section';
 import { Eyebrow } from '@/components/ui/Eyebrow';
 import { CaseStudyCard } from '@/components/case-study/CaseStudyCard';
-import { OtherWorkRow } from '@/components/case-study/OtherWorkRow';
-import { otherWork } from '@/content/other-work';
 
 export const metadata: Metadata = {
   title: 'Work',
   description:
-    'Selected case studies and other shipped work — web, mobile, and backend.',
+    'Case studies for TaskATask, Sammanté, and Chain VPN.',
 };
 
 export default function WorkPage() {
@@ -21,11 +19,11 @@ export default function WorkPage() {
     <>
       <Section>
         <Eyebrow>Work</Eyebrow>
-        <h1 className="mt-4 text-balance text-4xl font-semibold tracking-tighter md:text-5xl">
-          Things I&apos;ve shipped.
+        <h1 className="mt-4 text-balance font-display text-4xl font-semibold tracking-tighter md:text-5xl">
+          Work
         </h1>
-        <p className="mt-4 max-w-prose text-text-muted">
-          Four projects with full case studies, plus a list of smaller work.
+        <p className="mt-4 max-w-prose text-muted">
+          Case studies for the products I've built.
         </p>
 
         <div className="mt-12 grid gap-6 md:grid-cols-2">
@@ -35,17 +33,6 @@ export default function WorkPage() {
         </div>
       </Section>
 
-      <Section className="border-t border-border">
-        <Eyebrow>Other work</Eyebrow>
-        <h2 className="mt-4 text-3xl font-semibold tracking-tight">
-          Smaller projects
-        </h2>
-        <ul className="mt-8">
-          {otherWork.map((item) => (
-            <OtherWorkRow key={item.title} item={item} />
-          ))}
-        </ul>
-      </Section>
     </>
   );
 }

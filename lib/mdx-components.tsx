@@ -11,7 +11,7 @@ const sharedComponents = {
   Stack,
   h2: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h2
-      className="mt-12 text-2xl font-semibold tracking-tight text-text"
+      className="mt-12 font-display text-2xl font-semibold tracking-tight text-text"
       {...props}
     />
   ),
@@ -22,7 +22,7 @@ const sharedComponents = {
     />
   ),
   p: (props: React.HTMLAttributes<HTMLParagraphElement>) => (
-    <p className="mt-4 leading-relaxed text-text-muted" {...props} />
+    <p className="mt-4 leading-relaxed text-muted" {...props} />
   ),
   a: (props: React.AnchorHTMLAttributes<HTMLAnchorElement>) => (
     <a
@@ -31,23 +31,23 @@ const sharedComponents = {
     />
   ),
   ul: (props: React.HTMLAttributes<HTMLUListElement>) => (
-    <ul className="mt-4 list-disc space-y-2 pl-6 text-text-muted" {...props} />
+    <ul className="mt-4 list-disc space-y-2 pl-6 text-muted" {...props} />
   ),
   ol: (props: React.HTMLAttributes<HTMLOListElement>) => (
     <ol
-      className="mt-4 list-decimal space-y-2 pl-6 text-text-muted"
+      className="mt-4 list-decimal space-y-2 pl-6 text-muted"
       {...props}
     />
   ),
   code: (props: React.HTMLAttributes<HTMLElement>) => (
     <code
-      className="rounded bg-surface px-1.5 py-0.5 font-mono text-sm text-text"
+      className="rounded bg-surface px-1.5 py-0.5 text-sm text-text"
       {...props}
     />
   ),
   pre: (props: React.HTMLAttributes<HTMLPreElement>) => (
     <pre
-      className="my-6 overflow-x-auto rounded-md border border-border bg-surface p-4 text-sm"
+      className="my-6 overflow-x-auto rounded-btn border border-line bg-surface p-4 text-sm"
       {...props}
     />
   ),

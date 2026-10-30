@@ -17,16 +17,16 @@ export default function BlogPage() {
   return (
     <Section>
       <Eyebrow>Writing</Eyebrow>
-      <h1 className="mt-4 text-balance text-4xl font-semibold tracking-tighter md:text-5xl">
+      <h1 className="mt-4 text-balance font-display text-4xl font-semibold tracking-tighter md:text-5xl">
         Notes on building things.
       </h1>
-      <p className="mt-4 max-w-prose text-text-muted">
+      <p className="mt-4 max-w-prose text-muted">
         Short pieces on what I learn from shipping at work and on the side.
       </p>
 
       <div className="mt-12">
         {visible.length === 0 ? (
-          <div className="rounded-md border border-border bg-surface/40 p-8 text-text-muted">
+          <div className="rounded-btn border border-line bg-surface2 p-8 text-muted">
             <p>Writing soon. The first post will land here.</p>
           </div>
         ) : (

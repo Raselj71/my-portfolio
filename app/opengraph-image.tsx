@@ -17,24 +17,24 @@ export default async function OGImage() {
           flexDirection: 'column',
           justifyContent: 'space-between',
           padding: 80,
-          background:
-            'radial-gradient(60% 60% at 50% 0%, rgba(56,189,248,0.18) 0%, transparent 70%), #0a0a0a',
-          color: '#fafafa',
+          background: '#0E1412',
+          color: '#E8EEEA',
           fontFamily: 'sans-serif',
         }}
       >
-        <div style={{ fontSize: 28, color: '#38bdf8', letterSpacing: 4 }}>
-          SOFTWARE ENGINEER
+        <div style={{ display: 'flex', alignItems: 'center', gap: 14, fontSize: 28, color: '#A9B7B0' }}>
+          <div style={{ width: 14, height: 14, borderRadius: 7, background: '#5FD3A6' }} />
+          Software Engineer · Dhaka
         </div>
-        <div>
-          <div style={{ fontSize: 96, fontWeight: 700, lineHeight: 1.05 }}>
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
+          <div style={{ fontSize: 96, fontWeight: 700, lineHeight: 1.05, letterSpacing: -3 }}>
             {site.name}
           </div>
-          <div style={{ marginTop: 16, fontSize: 32, color: '#a1a1aa' }}>
-            {site.description}
+          <div style={{ marginTop: 20, fontSize: 34, color: '#A9B7B0', lineHeight: 1.3 }}>
+            Cross-platform mobile and full-stack engineer
           </div>
         </div>
-        <div style={{ fontSize: 24, color: '#71717a', fontFamily: 'monospace' }}>
+        <div style={{ fontSize: 24, color: '#7E8C86' }}>
           {site.url.replace(/^https?:\/\//, '')}
         </div>
       </div>

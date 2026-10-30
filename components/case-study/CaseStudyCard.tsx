@@ -16,10 +16,10 @@ export function CaseStudyCard({ item }: { item: CaseStudySummary }) {
   return (
     <NextLink
       href={item.url}
-      className="group flex flex-col overflow-hidden rounded-lg border border-border bg-surface transition-colors hover:border-border-strong"
+      className="group flex flex-col overflow-hidden rounded-card border border-line bg-surface transition-colors hover:border-line"
     >
       {item.cover && (
-        <div className="relative aspect-[16/9] w-full overflow-hidden bg-surface-hover">
+        <div className="relative aspect-[16/9] w-full overflow-hidden bg-surface2">
           <Image
             src={item.cover}
             alt=""
@@ -30,13 +30,13 @@ export function CaseStudyCard({ item }: { item: CaseStudySummary }) {
         </div>
       )}
       <div className="flex flex-col gap-3 p-6">
-        <div className="font-mono text-xs uppercase tracking-wider text-text-dim">
+        <div className="text-xs text-dim">
           {item.period}
         </div>
-        <h3 className="text-xl font-semibold tracking-tight text-text group-hover:text-accent">
+        <h3 className="font-display text-xl font-semibold tracking-tight text-text group-hover:text-accent">
           {item.title}
         </h3>
-        <p className="text-text-muted">{item.summary}</p>
+        <p className="text-muted">{item.summary}</p>
         <ul className="mt-2 flex flex-wrap gap-2">
           {item.stack.slice(0, 6).map((s) => (
             <li key={s}>
