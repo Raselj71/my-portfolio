@@ -32,7 +32,8 @@
   animation-delay: 0.2s;
 }
 .left {
-  left: 0;
+  left: 50%;
+  margin-left: -236px; /* centre half-width 100 + own width 160 - 24 overlap */
   bottom: 30px;
   width: 160px;
   z-index: 4;
@@ -41,7 +42,8 @@
   animation-delay: 0.32s;
 }
 .right {
-  right: 0;
+  left: 50%;
+  margin-left: 76px; /* centre half-width 100 - 24 overlap */
   bottom: 30px;
   width: 160px;
   z-index: 4;
@@ -109,10 +111,10 @@
     bottom: 26px;
   }
   .left {
-    left: 18px;
+    margin-left: -184px; /* 80 + 124 - 20 */
   }
   .right {
-    right: 18px;
+    margin-left: 60px; /* 80 - 20 */
   }
   .label {
     font-size: 11px;
@@ -130,7 +132,13 @@
   }
   .left,
   .right {
-    width: 112px;
+    width: 104px;
     bottom: 24px;
+  }
+  .left {
+    margin-left: -157px; /* 75 + 104 - 22 */
+  }
+  .right {
+    margin-left: 53px; /* 75 - 22 */
   }
 }
